@@ -9,15 +9,14 @@
 #' @export
 #'
 #' @examples
-one_zero_sampling <- function(start_pt = 0, interval, duration = 1) {
-  df <- tibble(
-    start = start_pt + 0:5000 * interval,
-    end = start + duration
-  )
-  df <- 
-    df %>% 
-    filter(end <= 3600)
-  return(df)
+one_zero_sampling <- function(interval, duration = 1) {
+  n_blocks <- 3600 / interval
+  pts <- rep(seq(1, 3600, interval), each = duration) 
+  increments <- rep(0:(duration - 1), n_blocks)
+  pts <- pts + increments
+  return(pts)
 }
 # pacman::p_load(tidyverse, targets)
-# one_zero_sampling(interval = 10, duration = 2)
+# one_zero_sampling(interval = 3, duration = 2)
+
+

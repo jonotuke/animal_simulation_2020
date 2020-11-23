@@ -8,20 +8,9 @@
 #' @examples
 measure_stats <- function(simDB) {
   simDB %>% 
+    count(type) %>% 
     mutate(
-      duration = end - start
-    ) %>% 
-    group_by(ID, type) %>% 
-    summarise(
-      n = n(), 
-      duration = sum(duration), 
-      avg_duration = duration / n
-    ) %>% 
-    mutate(
-      N = sum(n), 
-      total = sum(duration),
-      p_behaviour = n / N, 
-      p_time = duration / total
+      p = n / sum(n)
     )
 }
 # pacman::p_load(tidyverse, targets)

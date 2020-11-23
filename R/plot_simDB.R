@@ -6,19 +6,14 @@
 #' @export
 #'
 #' @examples
-plot_simDB <- function(sim_df, width = 0.1) {
-  IDs <- unique(sim_df$ID)
+plot_simDB <- function(sim_df) {
   sim_df %>% 
-    ggplot(aes()) + 
-    geom_rect(aes(xmin = start, 
-                  ymin = ID - width, 
-                  fill = type,
-                  xmax = end, 
-                  ymax = ID + width), col = "black", alpha = 0.5) + 
-    labs(x = "Time", fill = "Behaviour", y = "ID") + 
-    scale_y_continuous(breaks = IDs) + 
-    scale_x_continuous(breaks = seq(0, 3600, 360))
+    filter(type == "event") %>% 
+    ggplot(aes(time, "event")) + geom_point(shape = "square") + 
+    scale_x_continuous(breaks = seq(0, 3600, 300)) + 
+    labs(y = NULL)
 }
+
 # pacman::p_load(tidyverse, targets)
 # tar_load(example_simDB)
 # plot_simDB(example_simDB)

@@ -26,19 +26,17 @@ dir("R/", full.names = TRUE) %>% walk(source)
 
 # Basic form for data base
 
-The basic form, referred to as a `simDB`, is a data frame such that that each row is a behaviour, it will have the following columns:
+The basic form, referred to as a `simDB`, is a data frame such that that each row is a second, it has the following columns
 
--   **ID:** animal ID
-
--   **start:** the starting time for the behaviour
-
--   **end:** the ending time for the behaviour
-
+-   **time:** the second of interest. 
 -   **type:** the type of behaviour
 
-The types of behaviour will be of the form A, B, C, etc.
+The types of behaviour will of two forms:
 
-The times will be on the interval $[0, 3600]$.
+- background
+- event / state
+
+So we are interested in the event / state behaviour. 
 
 ## Example
 
@@ -49,49 +47,52 @@ tar_load(example_simDB)
 example_simDB
 ```
 
-In this case, we have two animals, ID1 and ID2, with possible behaviours A, B, and C.
-
 ```{r}
 plot_simDB(example_simDB)
 ```
 
-# Check data frame
-
-There is a function that checks that simulation data-frame is of the correct form:
-
--   starts at zero,
-
--   ends at 3600,
-
--   no overlapping behaviours,
-
--   no missing behaviours, i.e., time intervals in $[0,3600]$ without a behaviour.
 
 # Simulation method
 
-# Summary statistics
+## Response frequency
 
-We can get summary statistics from a simulation data frame
+In these simulations, we have a behaviour that is short (1 second). The behaviour occurs
+
+- frequent (every 3 seconds), 
+- moderate (every 30 seconds), or
+- infrequent (every 300 seconds). 
+
+The function `sim_response_freq()` produces a simDB with these properties. It works by splitting the time into blocks of length equal to the frequency, so for moderate frequency, we have blocks of 30 seconds, then one of the seconds in this time are randomly selected to be the event. 
 
 ```{r}
-measure_stats(example_simDB)
+sim_response_freq(3) %>% plot_simDB()
+sim_response_freq(30) %>% plot_simDB()
+sim_response_freq(300) %>% plot_simDB()
 ```
 
-For each ID and behaviour combination, we have
+## Response duration
 
--   **n:** the number of times that performing behaviour,
+In this simulation, the duration is 
 
--   **duration:** the total amount of time performing behaviour,
+- short (3 second), 
+- medium (30 seconds) and 
+- long (300 seconds). 
 
--   **avg\_duration**: the average duration performing in behaviour,
+A single event occurs in each 10 minute interval, and is randomly placed in this interval. 
 
--   **N**: the total number of behaviour sessions,
+```{r}
+sim_response_duration(3) %>% plot_simDB() + geom_vline(xintercept = seq(1, 3600, 600))
+sim_response_duration(30) %>% plot_simDB() + geom_vline(xintercept = seq(1, 3600, 600))
+sim_response_duration(300) %>% plot_simDB() + geom_vline(xintercept = seq(1, 3600, 600))
+```
 
--   **total**: total time observed,
+```{r}
+sim_response_duration(3) %>% measure_stats()
+sim_response_duration(30) %>% measure_stats()
+sim_response_duration(300) %>% measure_stats()
+```
 
--   **p\_behaviour**: the proportion behaviours that are the given type, and
 
--   **p\_time**: the proportion of time observed in behaviour.
 
 # Sampling methods
 
@@ -103,34 +104,79 @@ So we have two sampling methods:
 
 ## Pinpoint sampling
 
-The function `pin_point_sampling()` takes a start time and a interval. We assume that the duration of each observation is 1 second. It returns a data-frame called a `sampleDB`, that has the start and end sampling timepoints.
+The function `pin_point_sampling()` takes an interval. We assume that the duration of each observation is 1 second. It returns all the seconds to sample. 
 
 ```{r}
-pin_point_3s <- pin_point_sampling(start_pt = 0, interval = 3)
-pin_point_3s
+pin_point_sampling(interval = 3)[1:50]
 ```
 
 ## One-zero sampling
 
-The function `one_zero_sampling()` take start\_pt, an interval, and a duration and returns a `sampleDB`.
+The function `one_zero_sampling()` an interval, and a duration and returns the seconds to sample. 
 
 ```{r}
-one_zero_30s_2s <- one_zero_sampling(0, 30, 2)
-one_zero_30s_2s
+one_zero_sampling(interval = 30, duration = 5)[1:100]
 ```
 
 ## Sampling
 
-Given a set of observations `simDB` and a sampling framework `sampleDB`, then the function `sample_simDB()` returns the observations from these time points.
+Given a set of observations `simDB` and a sampling points, then the function `sample_simDB()` returns the observations from these time points.
 
 ```{r}
-tar_load(example_sampleDB)
-example_sampleDB
-example_sampling <- sample_simDB(example_simDB, example_sampleDB)
-example_sampling
+sample_pts <- one_zero_sampling(interval = 30, duration = 5)
+sample <- sample_simDB(simDB = example_simDB, pts = sample_pts)
+sample
 ```
 
 ```{r}
-plot_sampling(example_simDB, example_sampling, example_sampleDB)
+plot_sampling(example_simDB, sample, sample_pts)
 ```
 
+# Summary statistics
+
+We can get summary statistics from a simulation data frame
+
+```{r}
+measure_stats(example_simDB)
+measure_stats(sample)
+```
+
+# Simulation protocol
+
+So for each simulation, we have
+
+- method used - response frequency (RF), or response duration (RD), 
+- parameter - 3, 30, 300 interval (RF), or duration (RD). 
+
+This gives 6 different types of simulation, which we will repeat 100 times each giving 600 simulations. 
+
+# Sampling protocol 
+
+For each simulation, we have
+
+- sampling method - pinpoint - intervals 3, 30, and 300, while for one-zero, we sample every 10 minutes for duration of 3, 30, 300 seconds. 
+
+So again we have 6 sampling procedures, that will give use altogether 3600 measurements. 
+
+# Appendix
+
+## Code
+
+```{r code=readLines("../R/create_simDB.r"), eval = FALSE}
+```
+```{r code=readLines("../R/sim_response_freq.r"), eval = FALSE}
+```
+```{r code=readLines("../R/sim_response_duration.r"), eval = FALSE}
+```
+```{r code=readLines("../R/pinpoint_sample.r"), eval = FALSE}
+```
+```{r code=readLines("../R/one_zero_sample.r"), eval = FALSE}
+```
+```{r code=readLines("../R/sample_simDB.r"), eval = FALSE}
+```
+```{r code=readLines("../R/measure_stats.r"), eval = FALSE}
+```
+```{r code=readLines("../R/plot_simDB.r"), eval = FALSE}
+```
+```{r code=readLines("../R/plot_sampling.r"), eval = FALSE}
+```

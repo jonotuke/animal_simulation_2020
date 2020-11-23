@@ -1,0 +1,512 @@
+)
+}
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+simDB %>%
+mutate(
+duration = end - start
+) %>%
+group_by(ID, type) %>%
+summarise(
+n = n(),
+duration = sum(duration),
+avg_duration = duration / n
+) %>%
+mutate(
+N = sum(n)
+)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+tar_read(example_stat)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+?between
+pacman::p_load(tidyverse, targets)
+?between
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+ID1 <- sampleDB %>% filter(ID == 1)
+ID1 <- example_simDB %>% filter(ID == 1)
+ID1
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+?rowwise
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+print(sampleDB)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+sample_interval(ID1, 0.5, 0.6)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/_targets.R', echo=TRUE)
+tar_load(example_sampleDB)
+example_sampleDB
+knitr::opts_chunk$set(
+  echo = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+tar_load(example_simDB)
+example_simDB
+tar_load(example_sampleDB)
+example_sampleDB
+tar_load(example_sampling)
+tar_load(example_sampling)
+plot_simDB(example_sampling)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+plot_simDB(simDB) +
+geom_rect(aes(xmax = end,
+ymin = ID - 0.5 - width,
+ymax = ID -0.5 +  width
+), col = "black", alpha = 0.5, data = sampling) +
+geom_point(aes(x = start), data = sampleDB)
+example_simDB
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+plot_simDB(simDB) +
+geom_rect(aes(xmax = end, xmin = start,
+ymin = ID - 0.5 - width,
+ymax = ID -0.5 +  width,
+fill = type,
+), col = "black", alpha = 0.5, data = sampling) +
+geom_point(aes(x = start, y = 0), data = sampleDB) +
+geom_point(aes(x = end, y = 0), data = sampleDB) +
+geom_segment(aes(x = start, xend = end, y = 0, yend = 0))
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/_targets.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/_targets.R', echo=TRUE)
+today()
+libridate::today()
+lubridate::today()
+lubridate::today() %>% lubridate::stamp()
+pacman::p_load(tidyverse)
+lubridate::today() %>% lubridate::stamp()
+lubridate::today()
+?lubridate::today()
+now()
+pacman::p_load(tidyverse, lubridate)
+now()
+today() %>% format("%a")
+today() %>% format("%a %d $b")
+today() %>% format("%a %d %b")
+today() %>% format("%a %d %b %Y")
+format(today(), "%a %d %b %Y")
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+sampleDB <-
+tribble(
+~start, ~end,
+0.4, 0.4,
+0.6, 0.6
+)
+example_simDB
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+# pacman::p_load(tidyverse, targets)
+# tar_load(example_simDB)
+# sampleDB <-
+#   tribble(
+#     ~start, ~end,
+#     0.4, 0.4,
+#     0.6, 0.6
+#   )
+# example_simDB
+# sample_simDB(example_simDB, sampleDB)
+3600 * 0.1
+3600 * 0.5
+3600 * 0.6
+3600 * 0.2
+3600 * 0.4
+3600 * 0.7
+source('~/Dropbox/animal_simulation_2020/R/create_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/create_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/create_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/create_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/create_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/check_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/check_simDB.R', echo=TRUE)
+pacman::p_load(tidyverse, targets)
+tar_load(example_simDB)
+example_simDB
+check_simDB(example_simDB)
+# Break start
+example_simDB$start[1] <- 0.1
+# Break start
+example_simDB$start[1] <- 360
+check_simDB(example_simDB)
+3600*0.9
+# Break END
+tar_load(example_simDB)
+example_simDB$end[4] <- 3240
+check_simDB(example_simDB)
+1.1*3600
+# Break range
+tar_load(example_simDB)
+example_simDB$start[1] <- -360
+example_simDB$end[8] <- 3960
+check_simDB(example_simDB)
+# Make overlap
+tar_load(example_simDB)
+0.05*3600
+0.45*3600
+# Make overlap
+tar_load(example_simDB)
+example_simDB$start[2] <- 180
+example_simDB$end[6] <- 1620
+example_simDB
+plot_simDB(example_simDB)
+check_simDB(example_simDB)
+0.15*3600
+0.35*3600
+# Make missing
+tar_load(example_simDB)
+example_simDB$start[2] <- 540
+example_simDB$end[6] <- 1260
+example_simDB
+plot_simDB(example_simDB)
+check_simDB(example_simDB)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+example_simDB
+tar_read(example_plot)
+tar_read(example_stat)
+tar_read(example_simDB)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+#' pin_point_sampling
+#'
+#' @param simDB
+#' @param start
+#' @param interval
+#'
+#' @return sample_DB
+#' @export
+#'
+#' @examples
+pin_point_sampling <- function(start = 0, interval, duration = 1) {
+simDB
+}
+tar_load(example_simDB)
+example_simDB
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+tar_load(example_sampleDB)
+example_sampleDB
+3600 * 0.4
+0.5 * 3600
+0.7 * 3600
+source('~/Dropbox/animal_simulation_2020/R/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/create_sampleDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/create_sampleDB.R', echo=TRUE)
+one_zero_sampling(interval = 10, duration = 2)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+tar_load(example_simDB)
+example_simDB
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+plot_sim(example_simDB)
+dir("R/", full.names = TRUE) %>% walk(source)
+plot_sim(example_simDB)
+plot_simDB(example_simDB)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+plot_simDB(example_simDB)
+plot_simDB(example_simDB)
+dir("R/", full.names = TRUE) %>% walk(source)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+measure_stats(example_simDB)
+pin_point_sampling(start_pt = 0, interval = 3)
+pin_point_3s <- pin_point_sampling(start_pt = 0, interval = 3)
+pin_point_3s
+one_zero_30s_2s <- one_zero_sampling(0, 30, 2)
+one_zero_30s_2s
+# pacman::p_load(tidyverse, targets)
+# tar_load(example_simDB)
+# sampleDB <-
+#   tribble(
+#     ~start, ~end,
+#     0.4, 0.4,
+#     0.6, 0.6
+#   )
+# example_simDB
+# sample_simDB(example_simDB, sampleDB)
+# pacman::p_load(tidyverse, targets)
+# tar_load(example_simDB)
+# sampleDB <-
+#   tribble(
+#     ~start, ~end,
+#     0.4, 0.4,
+#     0.6, 0.6
+#   )
+# example_simDB
+# sample_simDB(example_simDB, sampleDB)
+sample_simDB <- function(simDB, sampleDB){
+samples <- simDB %>% group_split(ID) %>%
+map_df(sample_singleID, sampleDB)
+return(samples)
+}
+sample_simDB(example_simDB, pin_point_3s)
+sample_simDB(example_simDB, pin_point_3s)
+sample_simDB(example_simDB, example_sampleDB)
+example_sampling <- sample_simDB(example_simDB, example_sampleDB)
+example_sampling <- sample_simDB(example_simDB, example_sampleDB)
+example_sampling
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+pacman::p_load(tidyverse, targets)
+tar_load(example_simDB)
+plot_simDB(example_simDB)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+sim_df %>%
+filter(type == "event") %>%
+ggplot(aes(time, "event")) + geom_point() +
+scale_x_continuous(breaks = seq(0, 3600, 300))
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+pacman::p_load(tidyverse, targets)
+pin_point_sampling(interval = 3)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+pin_point_sampling(interval = 3)
+pin_point_sampling(interval = 3)[1:50]
+pacman::p_load(tidyverse, targets)
+one_zero_sampling(interval = 10, duration = 2)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+seq(0, 100, 10)
+seq(0, 100, 10) + 0:4
+0:4
+0:4 + seq(0. 100, 10)
+0:4 + seq(0, 100, 10)
+rep(0:10, 3)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+o:2
+0:2
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+rep(0:(duration - 1), n_blocks)
+duration = 2
+rep(0:(duration - 1), n_blocks)
+n_blocks <- 3600 / interval
+interval = 10
+n_blocks <- 3600 / interval
+rep(0:(duration - 1), n_blocks)
+rep(seq(0, 3600, interval), each = duration)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+one_zero_sampling(interval = 30, duration = 2)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+pacman::p_load(tidyverse, targets)
+pin_point_sampling(interval = 3)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+pts <- rep(seq(1, 3600, interval), each = duration)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+pin_point_sampling(interval = 3)[1:50]
+one_zero_sampling(interval = 30, duration = 5)
+one_zero_sampling(interval = 30, duration = 5)[1:100]
+pacman::p_load(tidyverse, targets)
+tar_load(example_simDB)
+example_simDB
+plot_simDB(example_simDB)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/sample_simDB.R', echo=TRUE)
+example_simDB
+sample_pts <- one_zero_sampling(interval = 30, duration = 5)
+sample_simDB(simDB = example_simDB, pts = sample_pts)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+simDB %>%
+filter(type == "event") %>%
+ggplot(aes(time, "gold standard")) + geom_point(shape = "square") +
+scale_x_continuous(breaks = seq(0, 3600, 300)) +
+labs(y = NULL)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+pin_point_sampling(30)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+pts <- pin_point_sampling(300)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+simDB %>%
+filter(type == "event") %>%
+ggplot(aes(time, "gold standard")) +
+geom_point(shape = "square") +
+geom_point(aes(x = time, "sample points"), data = sampleDB) +
+geom_point(aes(y = "sample"), data = sampling %>% filter(type == "event")) +
+scale_x_continuous(breaks = seq(0, 3600, 300)) +
+labs(y = NULL)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/plot_sampling.R', echo=TRUE)
+sample_pts <- one_zero_sampling(interval = 30, duration = 5)
+sample <- sample_simDB(simDB = example_simDB, pts = sample_pts)
+sample
+plot_sampling(example_simDB, sample, sample_pts)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/measure_stats.R', echo=TRUE)
+measure_stats(example_simDB)
+measure_stats(example_simDB)
+measure_stats(sample)
