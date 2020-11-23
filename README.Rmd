@@ -1,0 +1,15 @@
+---
+title: "README"
+author: "Jono Tuke"
+date: "02/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Google docs
+
+- <https://drive.google.com/drive/folders/1OKGxhUReBCNB7QqJ8kn7yZa8rATrkBR_?usp=sharing>
+

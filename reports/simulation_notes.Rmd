@@ -1,0 +1,136 @@
+---
+title: "Notes on simulation"
+author: "Jono Tuke"
+date: "`r format(lubridate::today(), '%a %d %b %Y')`"
+output: 
+  html_document:
+    theme: spacelab
+    number_sections: yes
+    df_print: paged
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  fig.width = 6, 
+  fig.asp = 0.618, 
+  out.width = "70%",
+  fig.align = "center", 
+  root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+```
+
+# Basic form for data base
+
+The basic form, referred to as a `simDB`, is a data frame such that that each row is a behaviour, it will have the following columns:
+
+-   **ID:** animal ID
+
+-   **start:** the starting time for the behaviour
+
+-   **end:** the ending time for the behaviour
+
+-   **type:** the type of behaviour
+
+The types of behaviour will be of the form A, B, C, etc.
+
+The times will be on the interval $[0, 3600]$.
+
+## Example
+
+Consider the following data frame
+
+```{r}
+tar_load(example_simDB)
+example_simDB
+```
+
+In this case, we have two animals, ID1 and ID2, with possible behaviours A, B, and C.
+
+```{r}
+plot_simDB(example_simDB)
+```
+
+# Check data frame
+
+There is a function that checks that simulation data-frame is of the correct form:
+
+-   starts at zero,
+
+-   ends at 3600,
+
+-   no overlapping behaviours,
+
+-   no missing behaviours, i.e., time intervals in $[0,3600]$ without a behaviour.
+
+# Simulation method
+
+# Summary statistics
+
+We can get summary statistics from a simulation data frame
+
+```{r}
+measure_stats(example_simDB)
+```
+
+For each ID and behaviour combination, we have
+
+-   **n:** the number of times that performing behaviour,
+
+-   **duration:** the total amount of time performing behaviour,
+
+-   **avg\_duration**: the average duration performing in behaviour,
+
+-   **N**: the total number of behaviour sessions,
+
+-   **total**: total time observed,
+
+-   **p\_behaviour**: the proportion behaviours that are the given type, and
+
+-   **p\_time**: the proportion of time observed in behaviour.
+
+# Sampling methods
+
+So we have two sampling methods:
+
+-   pinpoint: instantaneous observation of behaviour,
+
+-   one-zero: duration of observations.
+
+## Pinpoint sampling
+
+The function `pin_point_sampling()` takes a start time and a interval. We assume that the duration of each observation is 1 second. It returns a data-frame called a `sampleDB`, that has the start and end sampling timepoints.
+
+```{r}
+pin_point_3s <- pin_point_sampling(start_pt = 0, interval = 3)
+pin_point_3s
+```
+
+## One-zero sampling
+
+The function `one_zero_sampling()` take start\_pt, an interval, and a duration and returns a `sampleDB`.
+
+```{r}
+one_zero_30s_2s <- one_zero_sampling(0, 30, 2)
+one_zero_30s_2s
+```
+
+## Sampling
+
+Given a set of observations `simDB` and a sampling framework `sampleDB`, then the function `sample_simDB()` returns the observations from these time points.
+
+```{r}
+tar_load(example_sampleDB)
+example_sampleDB
+example_sampling <- sample_simDB(example_simDB, example_sampleDB)
+example_sampling
+```
+
+```{r}
+plot_sampling(example_simDB, example_sampling, example_sampleDB)
+```
+
