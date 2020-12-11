@@ -19,6 +19,17 @@ tar_pipeline(
   # Notes
   tar_render(sim_report, "reports/simulation_notes.Rmd"),
   # simulation
-  tar_target(sim_protocol, create_sim_protocol(params = c(3, 30, 300), n_sims = 2)), 
-  tar_target(sims, run_sims(sim_protocol))
+  tar_target(sim_protocol, create_sim_protocol(params = c(3, 30, 300), n_sims = 100)), 
+  tar_target(sims, run_sims(sim_protocol)), 
+  # Add gold standard
+  tar_target(sims_gold, add_gold(sims)),
+  # Add sampling
+  tar_target(sims_gold_samples, add_sampling_nest(sims_gold, delta = c(5, 50, 500))), 
+  # Get results
+  tar_target(results_tab, get_results_tab(sims_gold_samples)),
+  tar_map(
+    values = list(sim_method = c("RD", "RF")),
+    tar_target(results_plot,get_results_plot(results_tab, sim_method))
+  )
 )
+

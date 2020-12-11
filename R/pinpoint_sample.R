@@ -6,9 +6,19 @@
 #' @export
 #'
 #' @examples
-pin_point_sampling <- function(interval) {
-  pts <- seq(1, 3600, interval)
-  return(pts)
+pin_point_sampling <- function(simDB, delta) {
+  n <- nrow(simDB)
+  k <- floor((n - 1) / delta)
+  i <- seq(1, 3600, delta)
+  sample <- simDB[i, ]
+  p <- sum(sample$type == "event") / length(sample$type)
+  return(
+    tibble(
+      method = "PP", delta = delta, p = p
+    )
+  )
 }
 # pacman::p_load(tidyverse, targets)
-# pin_point_sampling(interval = 3)
+# tar_load(example_simDB)
+# example_simDB
+# pin_point_sampling(example_simDB, 3)

@@ -1,0 +1,512 @@
+example_simDB
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+1199+1
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+# pacman::p_load(tidyverse, targets)
+# tar_load(example_simDB)
+# example_simDB
+# pin_point_sampling(example_simDB, 3)
+pin_point_sampling(example_simDB, 3)
+pin_point_sampling(example_simDB, 30)
+pin_point_sampling(example_simDB, 300)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+dir("../R/", full.names = TRUE) %>% walk(source)
+pin_point_sampling(example_simDB, 3)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+dir("../R/", full.names = TRUE) %>% walk(source)
+tar_load(example_simDB)
+example_simDB
+plot_simDB(example_simDB)
+get_prop(example_simDB) %>% scales::percent()
+sim_response_freq(3) %>% plot_simDB()
+sim_response_freq(30) %>% plot_simDB()
+sim_response_freq(300) %>% plot_simDB()
+sim_response_freq(3) %>% get_prop()
+sim_response_freq(30) %>% get_prop()
+sim_response_freq(300) %>% get_prop()
+sim_response_duration(3) %>% plot_simDB() + geom_vline(xintercept = seq(1, 3600, 600))
+sim_response_duration(30) %>% plot_simDB() + geom_vline(xintercept = seq(1, 3600, 600))
+sim_response_duration(300) %>% plot_simDB() + geom_vline(xintercept = seq(1, 3600, 600))
+sim_response_duration(3) %>% get_prop()
+sim_response_duration(30) %>% get_prop()
+sim_response_duration(300) %>% get_prop()
+pin_point_sampling(example_simDB, 3)
+pin_point_sampling(example_simDB, 30)
+pin_point_sampling(example_simDB, 300)
+pacman::p_load(tidyverse, targets)
+tar_load(example_simDB)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+blocks <- blocks[1:n]
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+simDB %>%
+group_by(block) %>%
+mutate(
+y = ifelse(any(type == "event"), 1, 0)
+)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+one_zero_sampling(example_simDB, 3)
+one_zero_sampling(example_simDB, 3)
+one_zero_sampling(example_simDB, 30)
+one_zero_sampling(example_simDB, 300)
+source('~/.active-rstudio-document', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_gold.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_gold.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_gold.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/_targets.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+example_simDB
+source('~/Dropbox/animal_simulation_2020/R/pinpoint_sample.R', echo=TRUE)
+pacman::p_load(tidyverse, targets)
+tar_load(example_simDB)
+example_simDB <- example_simDB %>% filter(time < 3600)
+one_zero_sampling(example_simDB, 3)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/.active-rstudio-document', echo=TRUE)
+source('~/.active-rstudio-document', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+sims_gold
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+?summarise
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/one_zero_sample.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_gold.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+tar_load(sims_gold_samples)
+sims_gold_samples
+sims_gold_samples %>% unnest(samples)
+sims_gold_samples %>% unnest(true_p, samples)
+?unnest
+sims_gold_samples %>% unnest(c(true_p, samples))
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets)
+dir("R/", full.names = TRUE) %>% walk(source)
+dir("../R/", full.names = TRUE) %>% walk(source)
+tar_load(sims_gold_samples)
+sims_gold_samples
+sims_gold_samples %>% unnest(c(true_p, samples))
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+ggplot(aes(true_p, p, fill = method)) + geom_boxplot()
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+ggplot(aes(factor(true_p), p, fill = method)) + geom_boxplot()
+sims_gold_samples %>%
+unnest(c(true_p, samples))
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+ggplot(aes(factor(true_p), p, fill = method)) +
+geom_boxplot() +
+facet_wrap(methods ~ params)
+sims_gold_samples %>%
+unnest(c(true_p, samples))
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+mutate(
+error = p - true_p
+)
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+mutate(
+error = p - true_p
+) %>%
+ggplot(aes(factor(delta), error)) +
+geom_boxplot()
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+mutate(
+error = p - true_p
+) %>%
+ggplot(aes(factor(delta), error, fill  = method)) +
+geom_boxplot()
+tar_load(sims_gold_samples)
+sims_gold_samples %>%
+unnest(c(true_p, samples)) %>%
+mutate(
+error = p - true_p
+) %>%
+ggplot(aes(factor(delta), error, fill  = method)) +
+geom_boxplot() +
+facet_wrap(~methods)
+sims_gold_samples
+source('~/.active-rstudio-document', echo=TRUE)
+w
+source('~/.active-rstudio-document', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+qt(0.975, n = 99)
+qt(0.975, df = 99)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+results_tab
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_tab.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+get_results_plot(results_tab, "RF")
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/R/get_results_plot.R', echo=TRUE)
+source('~/Dropbox/animal_simulation_2020/_targets.R', echo=TRUE)
+tar_manifest()
+tar_read(results_plot_RD)
+tar_read(results_plot_RF)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "70%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets, gt)
+dir("R/", full.names = TRUE) %>% walk(source)
+dir("../R/", full.names = TRUE) %>% walk(source)
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+ungroup() %>% gt() %>%
+tab_header(title = "Summary statistics of error rate for each simulation type")
+tar_read(results_plot_RF)
+tar_read(results_plot_RF) +
+scale_color_brewer(palette = "Set1")
+tar_read(results_plot_RF) +
+scale_color_brewer(palette = "Set1") +
+labs(y = "Error", x = "Sampling parameters", col = "Sampling method") +
+ggtitle("95% percentile intervals of error rates for the response frequency simulation method")
+?ggtitle
+tar_read(results_plot_RF) +
+scale_color_brewer(palette = "Set1") +
+labs(y = "Error", x = "Sampling parameters", col = "Sampling method") +
+ggtitle(
+title = "95% percentile intervals of error rates for the response frequency simulation method",
+subtitle = "The figures are facetted by simulation parameters")
+tar_read(results_plot_RF) +
+scale_color_brewer(palette = "Set1") +
+labs(y = "Error",
+x = "Sampling parameters",
+col = "Sampling method",
+title = "95% percentile intervals of error rates for the response frequency simulation method",
+subtitle = "The figures are facetted by simulation parameters"
+)
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group(`Simulation method`) %>% gt() %>%
+tab_header(title = "Summary statistics of error rate for each simulation type")
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`) %>% gt() %>%
+tab_header(title = "Summary statistics of error rate for each simulation type")
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`, `Sampling method`) %>% gt() %>%
+tab_header(title = "Summary statistics of error rate for each simulation type")
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`, `Sampling method`) %>% gt() %>%
+tab_header(
+title = "Summary statistics of error rate for each simulation type",
+subtitle = "Grouped by simulation method and sampling method"
+)
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`, `Sampling method`) %>% gt() %>%
+tab_header(
+title = "Summary statistics of error rate for each simulation type",
+subtitle = "Grouped by simulation method and sampling method"
+) %>%
+tab_source_note(
+source_note = "RD: Response duration",
+) %>%
+tab_source_note(
+source_note = "RF: Response frequency"
+)
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`, `Sampling method`) %>% gt() %>%
+tab_header(
+title = "Summary statistics of error rate for each simulation type",
+subtitle = "Grouped by simulation method and sampling method"
+) %>%
+tab_source_note(
+source_note = "RD: Response duration",
+) %>%
+tab_source_note(
+source_note = "RF: Response frequency"
+)
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`, `Sampling method`) %>% gt() %>%
+tab_header(
+title = "Summary statistics of error rate for each simulation type",
+subtitle = "Grouped by simulation method and sampling method"
+) %>%
+tab_source_note(
+source_note = "RD: Response duration",
+) %>%
+tab_source_note(
+source_note = "RF: Response frequency"
+)
+tar_read(results_tab) %>%
+rename(
+`Simulation method` = methods,
+`Simulation parameters` = params,
+`Sampling method` = method,
+`Sampling parameters` = delta,
+`Mean error` = m,
+`Lower 95% percentile of error` = lwr,
+`Upper 95% percentile of error` = upr
+) %>%
+group_by(`Simulation method`, `Sampling method`) %>% gt() %>%
+tab_header(
+title = "Summary statistics of error rate for each simulation type",
+subtitle = "Grouped by simulation method and sampling method"
+) %>%
+tab_source_note(
+source_note = "RD: Response duration"
+) %>%
+tab_source_note(
+source_note = "RF: Response frequency"
+)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center",
+root.dir = '../'
+)
+pacman::p_load(tidyverse, tidymodels, targets, gt)
+dir("R/", full.names = TRUE) %>% walk(source)
+dir("../R/", full.names = TRUE) %>% walk(source)
+tar_read(results_plot_RF) +
+scale_color_brewer(palette = "Set1") +
+labs(y = "Error",
+x = "Sampling parameters",
+col = "Sampling method",
+title = "95% percentile intervals of error rates for the response frequency simulation method",
+subtitle = "The figures are facetted by simulation parameters"
+) +
+theme(legend.position = "bottom")
+tar_read(results_plot_RD) +
+scale_color_brewer(palette = "Set1") +
+labs(y = "Error",
+x = "Sampling parameters",
+col = "Sampling method",
+title = "95% percentile intervals of error rates for the response duration simulation method",
+subtitle = "The figures are facetted by simulation parameters"
+) +
+theme(legend.position = "bottom")
+tar_read(results_plot_RD) +
+scale_color_brewer(palette = "Set1") +
+labs(y = "Error",
+x = "Sampling parameters",
+col = "Sampling method",
+title = "95% percentile intervals of error rates for the response duration simulation method",
+subtitle = "The figures are facetted by simulation parameters"
+) +
+theme(legend.position = "bottom")
+pacman::p_load(tidyverse, targets)
+tar_load(example_simDB)
+tar_load(sims_gold)
+add_sampling(example_simDB)
+source('~/Dropbox/animal_simulation_2020/R/add_sampling.R', echo=TRUE)
+## Load functions ----
+dir("R/", full.names = TRUE) %>% walk(source)
+pacman::p_load(tidyverse, targets)
+source("R/pinpoint_sample.R")
+add_sampling(example_simDB)
+source("R/one_zero_sample.R")
+tar_load(example_simDB)
+tar_load(sims_gold)
+add_sampling(example_simDB)
+add_sampling(example_simDB, delta = c(6, 60, 600))

@@ -1,9 +1,3 @@
 name|progress
-sim_protocol|running
-sim_protocol|built
-example_simDB|running
-example_simDB|built
-sims|running
-sims|built
 sim_report|running
 sim_report|built
