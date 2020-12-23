@@ -175,6 +175,36 @@ sim_response_freq(30) %>% get_prop()
 sim_response_freq(300) %>% get_prop()
 ```
 
+### Joint plot
+
+```{r}
+sim_response_freq(3) %>% 
+  add_column(rate = "high") %>% 
+  bind_rows(
+    sim_response_freq(30) %>% 
+      add_column(rate = "medium")
+  ) %>% 
+  bind_rows(
+    sim_response_freq(300) %>% 
+      add_column(rate = "low")
+  ) %>% 
+  filter(
+    type == "event"
+  ) %>% 
+  mutate(
+    rate = factor(rate, levels = c("low", "medium", "high"))
+  ) %>% 
+  ggplot(
+    aes(time, rate) 
+  ) + geom_point(shape = "square") +
+  labs(y = "Frequency", x = "Time (seconds)") + 
+    scale_x_continuous(breaks = seq(0, 3600, 300))
+```
+
+```{r}
+ggsave("figs/sim_RF.jpg", width = 10, height = 6)
+```
+
 ## Response duration
 
 In this simulation, the duration is
@@ -195,6 +225,37 @@ sim_response_duration(300) %>% plot_simDB() + geom_vline(xintercept = seq(1, 360
 sim_response_duration(3) %>% get_prop()
 sim_response_duration(30) %>% get_prop()
 sim_response_duration(300) %>% get_prop()
+```
+
+### Joint plot
+
+```{r}
+sim_response_duration(3) %>% 
+  add_column(rate = "short") %>% 
+  bind_rows(
+    sim_response_duration(30) %>% 
+      add_column(rate = "medium")
+  ) %>% 
+  bind_rows(
+    sim_response_duration(300) %>% 
+      add_column(rate = "long")
+  ) %>% 
+  filter(
+    type == "event"
+  ) %>% 
+  mutate(
+    rate = factor(rate, levels = c("long", "medium", "short"))
+  ) %>% 
+  ggplot(
+    aes(time, rate) 
+  ) + geom_point(shape = "square") +
+  labs(y = "Duration", x = "Time (seconds)") + 
+    scale_x_continuous(breaks = seq(0, 3600, 300)) + 
+  geom_vline(xintercept = seq(1, 3600, 600))
+```
+
+```{r}
+ggsave("figs/sim_RD.jpg", width = 10, height = 6)
 ```
 
 # Sampling methods
