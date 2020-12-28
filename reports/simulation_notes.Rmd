@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
   fig.align = "center", 
   root.dir = '../'
 )
-pacman::p_load(tidyverse, tidymodels, targets, gt)
+pacman::p_load(tidyverse, tidymodels, targets, gt, rstatix)
 dir("R/", full.names = TRUE) %>% walk(source)
 dir("../R/", full.names = TRUE) %>% walk(source)
 theme_set(theme_bw())
@@ -437,14 +437,7 @@ results_tab %>%
 
 ```{r, echo = FALSE}
 tar_read(results_plot_RF) + 
-  scale_color_brewer(palette = "Set1") + 
-  labs(y = "Error", 
-       x = "Sampling parameters", 
-       col = "Sampling method",
-       title = "95% percentile intervals of error rates for the response frequency simulation method", 
-    subtitle = "The figures are facetted by simulation parameters"
-       ) + 
-  theme(legend.position = "bottom")
+  labs(title = "95% percentile intervals of error rates for the response frequency simulation method")
 ```
 
 ```{r}
@@ -458,15 +451,8 @@ With pinpoint sampling, we find that the method is unbiased, but the variability
 ## Response duration simulation
 
 ```{r, echo = FALSE}
-tar_read(results_plot_RD) + 
-  scale_color_brewer(palette = "Set1") + 
-  labs(y = "Error", 
-       x = "Sampling parameters", 
-       col = "Sampling method",
-       title = "95% percentile intervals of error rates for the response duration simulation method", 
-    subtitle = "The figures are facetted by simulation parameters"
-       ) + 
-  theme(legend.position = "bottom")
+tar_read(results_plot_RD) +
+  labs(title = "95% percentile intervals of error rates for the response duration simulation method")
 ```
 
 ```{r}
@@ -482,24 +468,7 @@ To do this, we use a Friedman test to deal with the non-normality of the errors.
 ## Response duration
 
 ```{r}
-tar_load(sims_gold_samples)
-RD_df <- sims_gold_samples %>% 
-  filter(methods == "RD") %>% 
-  unnest(c(true_p, samples)) %>% 
-  mutate(
-    error = p - true_p
-  ) %>% 
-  unite(
-    col = "block", 
-    c(params, delta)
-  ) %>% 
-  group_by(
-    block, method
-  ) %>% 
-  summarise(
-    error = mean(error)
-  )
-friedman.test(RD_df$error, groups = RD_df$method, blocks = RD_df$block) %>% broom::tidy()
+tar_read(test_results_RD)
 ```
 
 We see that there is a statistically significant difference between the sampling methods at the 5% level for the response duration method. 
@@ -507,22 +476,34 @@ We see that there is a statistically significant difference between the sampling
 ## Response frequency
 
 ```{r}
-tar_load(sims_gold_samples)
-RF_df <- sims_gold_samples %>% 
-  filter(methods == "RF") %>% 
-  unnest(c(true_p, samples)) %>% 
-  mutate(
-    error = p - true_p
+tar_read(test_results_RF)
+```
+
+## Post-hoc
+
+```{r}
+post_hoc_tab <- tar_read(post_hoc_tab) %>% 
+  select(
+    `Simulation method` = methods, 
+    `Simulation parameters` = params, 
+    `Sampling parameters` = delta, 
+    `P-value` = p
   ) %>% 
-  unite(
-    col = "block", 
-    c(params, delta)
+  group_by(`Simulation method`) %>% 
+  pivot_wider(names_from = `Sampling parameters`,values_from = `P-value`) %>% 
+  gt() %>% 
+  tab_spanner(
+    label = "Sampling parameters", 
+    columns = vars(`5`, `50`, `500`)
   ) %>% 
-  group_by(
-    block, method
-  ) %>% 
-  summarise(
-    error = mean(error)
-  )
-friedman.test(RF_df$error, groups = RF_df$method, blocks = RF_df$block) %>% broom::tidy()
+  tab_header(
+    title = "P-value for comparision of pinpoint sampling to one-zero sampling for each simulation and sampling method", 
+    subtitle = "P-values adjusted by FDR method"
+    )
+post_hoc_tab
+```
+
+```{r}
+post_hoc_tab %>% 
+  gtsave("tabs/post_hoc.rtf")
 ```

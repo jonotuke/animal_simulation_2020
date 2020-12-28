@@ -7,7 +7,7 @@ dir("R/", full.names = TRUE) %>% walk(source)
 # Set target-specific options such as packages.
 tar_option_set(
   packages = c(
-    "tidyverse"
+    "tidyverse", "rstatix"
   )
 )
 
@@ -30,6 +30,11 @@ tar_pipeline(
   tar_map(
     values = list(sim_method = c("RD", "RF")),
     tar_target(results_plot,get_results_plot(results_tab, sim_method))
-  )
+  ),
+  # Testing
+  tar_map(
+    values = list(sim_method = c("RD", "RF")), 
+    tar_target(test_results, perform_test(sims_gold_samples, sim_method))
+  ),
+  tar_target(post_hoc_tab, get_post_hoc(sims_gold_samples))
 )
-
