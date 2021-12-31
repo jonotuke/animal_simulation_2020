@@ -17,7 +17,7 @@ list(
   # Example
   tar_target(example_simDB, create_simDB()),
   # Notes
-  tar_render(sim_report, "README.Rmd"),
+  tar_render(sim_report, "Notes.Rmd"),
   # simulation
   tar_target(
     sim_protocol,

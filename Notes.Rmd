@@ -3,16 +3,16 @@ title: "Notes on simulation"
 author: "Jono Tuke"
 date: "`r format(lubridate::today(), '%a %d %b %Y')`"
 output:
-  pdf_document:
-    toc: yes
-  word_document:
-    toc: yes
   html_document:
     theme: spacelab
     number_sections: yes
     df_print: paged
     toc: yes
     toc_float: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
